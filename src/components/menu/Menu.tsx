@@ -8,10 +8,12 @@ const Menu = () => {
       {menu.map((item) => (
         <div className="item" key={item.id}>
           <span className="title">{item.title}</span>
-          <Link to="/" className="listItem">
-            <img src="/home.svg" alt="" />
-            <span className="listItemTitle">Home</span>
-          </Link>
+          {item.listItems.map((listsItem) => (
+            <Link to="/" className="listItem">
+              <img src="/home.svg" alt="" />
+              <span className="listItemTitle">{listsItem.title}</span>
+            </Link>
+          ))}
         </div>
       ))}
     </div>
