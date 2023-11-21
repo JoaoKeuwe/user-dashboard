@@ -1,9 +1,12 @@
-import './footer.scss'
+import "./footer.scss";
 
- const Footer = () => {
+const Footer = () => {
   return (
-    <div className='footer'>footer</div>
-  )
- }
+    <div className="footer">
+      <span>lamadmin</span>
+      <span>© Lama Dev Admin Dashboard</span>
+    </div>
+  );
+};
 
- export default Footer
+export default Footer;
