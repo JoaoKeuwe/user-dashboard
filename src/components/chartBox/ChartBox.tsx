@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Line, LineChart, ResponsiveContainer } from "recharts";
+import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 import "./chartBox.scss";
 
 const data = [
@@ -46,26 +46,32 @@ const data = [
     amt: 2100,
   },
 ];
-const ChartBox = () => {
+const ChartBox = (props: any) => {
   return (
     <div className="chartBox">
       <div className="boxInfo">
         <div className="title">
-          <img src="/user.svg" alt="" />
-          <span>Total Users</span>
+          <img src={props.icon} alt="" />
+          <span>{props.title}</span>
         </div>
-        <h1>11.238</h1>
+        <h1>{props.number}</h1>
         <Link to="">View All</Link>
       </div>
       <div className="chartInfo">
         <div className="chart">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart width={300} height={100} data={data}>
+          <ResponsiveContainer width="99%" height="100%">
+            <LineChart  data={props.chartData}>
+              <Tooltip
+                contentStyle={{ background: "transparent", border: "none" }}
+                labelStyle={{ display: "none" }}
+                position={{ x: 10, y: 80 }}
+              />
               <Line
                 type="monotone"
-                dataKey="pv"
+                dataKey={props.dataKey}
                 stroke="#8884d8"
                 strokeWidth={2}
+                dot={false}
               />
             </LineChart>
           </ResponsiveContainer>
