@@ -1,5 +1,5 @@
 import "./topBox.scss";
-import { topDealUsers } from "../../data";
+import { topDealUsers } from "../../data.ts";
 
 const TopBox = () => {
   return (
@@ -11,7 +11,7 @@ const TopBox = () => {
             <div className="user">
               <img src={user.img} alt="" />
               <div className="userTexts">
-                <span className="userName"></span>
+                <span className="username">{user.username}</span>
                 <span className="email">{user.email}</span>
               </div>
             </div>
