@@ -1,6 +1,6 @@
 import "./navbar.scss";
 
- const Navbar = () => {
+const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
@@ -28,4 +28,4 @@ import "./navbar.scss";
   );
 };
 
-export default Navbar
+export default Navbar;
